@@ -1,0 +1,9 @@
+<div class="app-container">
+  <app-header></app-header>
+  <app-forms (submitEvent)="onSubmit()"></app-forms>
+  <app-caption></app-caption>
+  <!-- O ngIF é utilizado com o 'pipe async' pq o tipo de showList é BehaviorSubject -->
+  <!-- BehaviorSubject é para valores assincronos e é preciso ficar 'ouvindo' suas mudanças -->
+  <app-cards-list *ngIf="(showList | async)" [unitsList]="unitsList"></app-cards-list>
+  <app-footer></app-footer>
+</div>
